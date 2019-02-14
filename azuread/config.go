@@ -15,6 +15,7 @@ import (
 	"github.com/hashicorp/go-azure-helpers/authentication"
 	"github.com/hashicorp/go-azure-helpers/sender"
 	"github.com/hashicorp/terraform/httpclient"
+	"github.com/terraform-providers/terraform-provider-azuread/azuread/helpers/msgraph"
 	"github.com/terraform-providers/terraform-provider-azuread/version"
 )
 
@@ -33,6 +34,7 @@ type ArmClient struct {
 	groupsClient            graphrbac.GroupsClient
 	servicePrincipalsClient graphrbac.ServicePrincipalsClient
 	usersClient             graphrbac.UsersClient
+	graphClient             msgraph.Client
 }
 
 // getArmClient is a helper method which returns a fully instantiated *ArmClient based on the auth Config's current settings.
